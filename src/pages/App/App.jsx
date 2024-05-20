@@ -6,6 +6,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import ExperienceDetail from '../ExperienceDetail/ExperienceDetail';
 import NewExperienceForm from '../NewExperienceForm/NewExperienceForm';
 import './App.css';
+import axios from 'axios'; // FIRO
 
 import NavBar from '../../components/NavBar/NavBar';
 
