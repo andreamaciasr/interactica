@@ -5,6 +5,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import Dashboard from '../Dashboard/Dashboard';
 import ExperienceDetail from '../ExperienceDetail/ExperienceDetail';
 import './App.css';
+import axios from 'axios'; // FIRO
 
 import NavBar from '../../components/NavBar/NavBar';
 
