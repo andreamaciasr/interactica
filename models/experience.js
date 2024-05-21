@@ -15,10 +15,6 @@ const experience = new mongoose.Schema(
       type: String,
       required: false,
     },
-    cloudinaryId: {
-      type: String,
-      required: true,
-    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -27,3 +23,5 @@ const experience = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+module.exports = mongoose.model("Experience", experience);
