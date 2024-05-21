@@ -32,8 +32,13 @@ export default function App() {
               element={<ExperienceDetail />}
             />
             <Route path="/experiences" element={<Dashboard />} />
+            <Route
+              path="/new"
+              element={
+                <NewExperienceForm addExperience={addExperience} user={user} />
+              }
+            />
           </Routes>
-          <NewExperienceForm addExperience={addExperience} user={user} />
         </>
       ) : (
         <AuthPage setUser={setUser} />
