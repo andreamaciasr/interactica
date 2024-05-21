@@ -6,6 +6,27 @@ const logger = require("morgan");
 require("dotenv").config();
 // Connect to the database
 require("./config/database");
+//Configuring  MULTER TO S3 - FIRO
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const s3 = require('./config/s3');
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "wandersnap",
+    acl: "public-read",
+    metadata: (req, file, cb) => {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: (req, file, cb) => {
+      cb(null, Date.now().toString() + "-" + file.originalname);
+    },
+  }),
+});
+
+
+
 
 const app = express();
 
@@ -31,6 +52,14 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+app.post("/upload", upload.single("image"), (req, res) => {
+  res.send({ imageUrl: req.file.location });
+});
+
 app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
 });
+
+
+
+
