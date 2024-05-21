@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import Dashboard from '../Dashboard/Dashboard';
 import ExperienceDetail from '../ExperienceDetail/ExperienceDetail';
+import NewExperienceForm from '../NewExperienceForm/NewExperienceForm';
 import './App.css';
 import axios from 'axios'; // FIRO
 
@@ -22,6 +23,7 @@ export default function App() {
               <Route path="/experiences/:experienceid" element={<ExperienceDetail />} />
               <Route path="/experiences" element={<Dashboard />} />
             </Routes>
+            <NewExperienceForm addExperience={addExperience}  user={user}/>
           </>
           :
           <AuthPage setUser={setUser} />
