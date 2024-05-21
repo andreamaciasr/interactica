@@ -7,8 +7,8 @@ module.exports = {
 
 async function create(req, res) {
   try {
-    console.log(experience);
     const experience = await Experience.create(req.body);
+    console.log(experience);
     res.json(experience);
   } catch (error) {
     res.status(400).json(error);
