@@ -5,6 +5,8 @@ const ensureLoggedIn = require("../../config/ensureLoggedIn");
 
 router.post("/", ensureLoggedIn, experiencesCtrl.create);
 
-router.get("/all", ensureLoggedIn, experiencesCtrl.getAll);
+router.get("/", experiencesCtrl.getAll);
+
+router.get("/:experienceid", experiencesCtrl.getOne);
 
 module.exports = router;

@@ -6,6 +6,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
 // import { getExperiences } from "../../utilities/experiences-api";
+import { getOne } from "../../utilities/experiences-api";
 import "./App.css";
 
 import NavBar from "../../components/NavBar/NavBar";
@@ -14,6 +15,7 @@ import { getExperiences } from "../../utilities/experiences-api";
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [experiences, setExperiences] = useState([]);
+  // const [experience, setExperience] = useState("");
 
   useEffect(() => {
     async function fetchExperiences() {
@@ -24,6 +26,15 @@ export default function App() {
 
     fetchExperiences();
   }, []);
+
+  // useEffect((id) => {
+  //   async function fetchOne() {
+  //     const experience = await getOne(id);
+  //     setExperience(experience);
+  //   }
+
+  //   fetchOne();
+  // }, []);
 
   function addExperience(experience) {
     setExperiences([...experiences, experience]);
@@ -40,7 +51,7 @@ export default function App() {
               element={<ExperienceDetail />}
             />
             <Route
-              path="/experiences"
+              path="/experiences/"
               element={<Dashboard experiences={experiences} />}
             />
             <Route
