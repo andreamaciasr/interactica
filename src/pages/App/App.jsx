@@ -5,17 +5,25 @@ import AuthPage from "../AuthPage/AuthPage";
 import Dashboard from "../Dashboard/Dashboard";
 import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
+// import { getExperiences } from "../../utilities/experiences-api";
 import "./App.css";
 
 import NavBar from "../../components/NavBar/NavBar";
+import { getExperiences } from "../../utilities/experiences-api";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [experiences, setExperiences] = useState([]);
 
-  // useEffect(() => {
-  //   async function
-  // });
+  useEffect(() => {
+    async function fetchExperiences() {
+      const experiences = await getExperiences();
+      console.log(experiences);
+      setExperiences(experiences);
+    }
+
+    fetchExperiences();
+  }, []);
 
   function addExperience(experience) {
     setExperiences([...experiences, experience]);
@@ -31,7 +39,10 @@ export default function App() {
               path="/experiences/:experienceid"
               element={<ExperienceDetail />}
             />
-            <Route path="/experiences" element={<Dashboard />} />
+            <Route
+              path="/experiences"
+              element={<Dashboard experiences={experiences} />}
+            />
             <Route
               path="/new"
               element={

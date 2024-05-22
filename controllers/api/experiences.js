@@ -17,7 +17,7 @@ async function create(req, res) {
 async function getAll(req, res) {
   try {
     const experiences = await Experience.find({});
-    res.json(notes);
+    res.json(experiences);
   } catch (error) {
     res.status(400).json(error);
   }
