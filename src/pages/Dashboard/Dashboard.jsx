@@ -1,16 +1,13 @@
-import { checkToken } from "../../utilities/users-service";
+import ExperienceItem from "../ExperienceItem/ExperienceItem";
 
-export default function Dashboard() {
-
-  async function handleCheckToken() {
-    const expDate = await checkToken();
-    console.log(expDate);
-  }
+export default function Dashboard({ experiences }) {
+  
 
   return (
     <>
-      <h1>Dashboard</h1>
-      <button onClick={ handleCheckToken }>Check When My Login Expires</button>
+      <ul className="Dashboard">{experiences.map((e, idx) =>  (
+        <ExperienceItem experience={e} key={idx} />
+      ))}</ul>
     </>
   );
 }
