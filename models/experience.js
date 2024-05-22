@@ -1,6 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema(
+  {
+    content: {
+      type: String,
+      required: true,
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
 const experience = new mongoose.Schema(
   {
     title: {
@@ -20,6 +37,7 @@ const experience = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    comments: [commentSchema],
   },
   { timestamps: true }
 );

@@ -8,3 +8,7 @@ export async function saveExperience(experienceData) {
 export async function getExperiences() {
   return sendRequest(BASE_URL, "GET");
 }
+
+export async function getOne(id) {
+  return sendRequest(`${BASE_URL}/${id}`, "GET");
+}
