@@ -65,7 +65,7 @@ export default function App() {
         <AuthPage setUser={setUser} />
       )}
       <div
-        className="app"
+        className="Img"
         style={{
           backgroundImage: img ? `url(${img.url})` : "none",
           backgroundSize: "cover",
