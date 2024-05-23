@@ -40,6 +40,12 @@ export default function App() {
   }
 
   return (
+    <div
+    className="NasaPic"
+    style={{
+      backgroundImage: img ? `url(${img.url})` : "none",
+    }}
+  >
     <main className="App">
       {user ? (
         <>
@@ -64,14 +70,7 @@ export default function App() {
       ) : (
         <AuthPage setUser={setUser} />
       )}
-      <div
-        className="Img"
-        style={{
-          backgroundImage: img ? `url(${img.url})` : "none",
-          backgroundSize: "cover",
-          height: "100vh",
-        }}
-      ></div>
     </main>
+     </div>
   );
 }
