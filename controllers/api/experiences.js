@@ -1,9 +1,15 @@
+const { findRenderedDOMComponentWithTag } = require("react-dom/test-utils");
 const Experience = require("../../models/experience");
+const BASE_URL = "/api/experiences";
+const NASA_URL =
+  "https://api.nasa.gov/planetary/apod?api_key=3JtXKEcKQcQXgl2ooDJJCd6g4CtyZkrToZ7aQeSl";
+const KEY = process.env.NASA_KEY;
 
 module.exports = {
   create,
   getAll,
   getOne,
+  fetchNasa,
 };
 
 async function create(req, res) {
@@ -26,7 +32,6 @@ async function getAll(req, res) {
 
 async function getOne(req, res) {
   try {
-    console.log("req.params: ", req.params);
     const experience = await Experience.findById(req.params.experienceid); // comes from /:experienceid
     res.json(experience);
   } catch (error) {
@@ -34,11 +39,15 @@ async function getOne(req, res) {
   }
 }
 
-// async function show(req, res) {
-//   try {
-//     const doodle = await Doodle.findById(req.params.doodleId);
-//     res.render("doodles/show.ejs", { title: "DoodleDo", doodle });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+async function fetchNasa(req, res) {
+  console.log("running");
+  try {
+    const response = await fetch(NASA_URL, "GET");
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    res.json(data);
+  } catch (error) {
+    res.json(error);
+  }
+}

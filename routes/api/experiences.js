@@ -9,4 +9,6 @@ router.get("/", experiencesCtrl.getAll);
 
 router.get("/:experienceid", experiencesCtrl.getOne);
 
+router.get("/get-nasa-image", experiencesCtrl.fetchNasa);
+
 module.exports = router;

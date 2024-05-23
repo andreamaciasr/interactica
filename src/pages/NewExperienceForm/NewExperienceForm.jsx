@@ -17,11 +17,8 @@ export default function NewExperienceForm({ addExperience, user }) {
         img: newExperience.img,
         user: user,
       };
-      console.log(formData);
       const experience = await saveExperience(formData);
-      console.log(experience);
       const createdAt = new Date(experience.createdAt).toLocaleDateString();
-      console.log(createdAt);
       addExperience({
         title: experience.title,
         description: experience.description,
@@ -61,13 +58,7 @@ export default function NewExperienceForm({ addExperience, user }) {
             onChange={handleChange}
             required
           />
-          <label>Image URL</label>
-          <input
-            type="text"
-            name="img"
-            value={newExperience.img}
-            onChange={handleChange}
-          />
+
           <button type="submit">Submit</button>
         </form>
       </div>
