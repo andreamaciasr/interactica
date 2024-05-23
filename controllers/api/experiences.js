@@ -1,8 +1,7 @@
 const { findRenderedDOMComponentWithTag } = require("react-dom/test-utils");
 const Experience = require("../../models/experience");
 const BASE_URL = "/api/experiences";
-const NASA_URL =
-  "https://api.nasa.gov/planetary/apod?api_key=3JtXKEcKQcQXgl2ooDJJCd6g4CtyZkrToZ7aQeSl";
+const NASA_URL = "https://api.nasa.gov/planetary/apod?api_key=";
 const KEY = process.env.NASA_KEY;
 
 module.exports = {
@@ -42,12 +41,13 @@ async function getOne(req, res) {
 async function fetchNasa(req, res) {
   console.log("running");
   try {
-    const response = await fetch(NASA_URL, "GET");
+    const response = await fetch(NASA_URL + KEY);
     console.log(response);
     const data = await response.json();
     console.log(data);
     res.json(data);
   } catch (error) {
+    console.log(error);
     res.json(error);
   }
 }

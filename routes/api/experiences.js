@@ -7,8 +7,8 @@ router.post("/", ensureLoggedIn, experiencesCtrl.create);
 
 router.get("/", experiencesCtrl.getAll);
 
-router.get("/:experienceid", experiencesCtrl.getOne);
-
 router.get("/get-nasa-image", experiencesCtrl.fetchNasa);
+
+router.get("/:experienceid", experiencesCtrl.getOne);
 
 module.exports = router;

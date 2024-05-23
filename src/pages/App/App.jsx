@@ -22,7 +22,6 @@ export default function App() {
       console.log("running");
       const img = await getImage();
       setImg(img);
-      console.log(img);
     }
     getBackgroundImage();
   }, []);
