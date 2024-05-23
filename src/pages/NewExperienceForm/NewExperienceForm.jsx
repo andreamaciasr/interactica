@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { saveExperience } from "../../utilities/experiences-api";
+import { useNavigate } from "react-router-dom";
 
 export default function NewExperienceForm({ addExperience, user }) {
   const [newExperience, setNewExperience] = useState({
@@ -7,6 +8,8 @@ export default function NewExperienceForm({ addExperience, user }) {
     description: "",
     img: "",
   });
+
+  const navigate = useNavigate();
 
   async function handleNewExperience(evt) {
     evt.preventDefault();
@@ -25,6 +28,7 @@ export default function NewExperienceForm({ addExperience, user }) {
         createdAt,
       }); // fill
       setNewExperience({ title: "", description: "", img: "" });
+      navigate("/experiences");
     } catch (error) {
       console.log("error!!!");
     }
