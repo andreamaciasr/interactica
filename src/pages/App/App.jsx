@@ -6,7 +6,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
 // import { getExperiences } from "../../utilities/experiences-api";
-import { getOne } from "../../utilities/experiences-api";
+import { getImage, getOne } from "../../utilities/experiences-api";
 import "./App.css";
 
 import NavBar from "../../components/NavBar/NavBar";
@@ -15,26 +15,26 @@ import { getExperiences } from "../../utilities/experiences-api";
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [experiences, setExperiences] = useState([]);
-  // const [experience, setExperience] = useState("");
+  const [img, setImg] = useState(null);
+
+  useEffect(() => {
+    async function getBackgroundImage() {
+      console.log("running");
+      const img = await getImage();
+      setImg(img);
+      console.log(img);
+    }
+    getBackgroundImage();
+  }, []);
 
   useEffect(() => {
     async function fetchExperiences() {
       const experiences = await getExperiences();
-      console.log(experiences);
       setExperiences(experiences);
     }
 
     fetchExperiences();
   }, []);
-
-  // useEffect((id) => {
-  //   async function fetchOne() {
-  //     const experience = await getOne(id);
-  //     setExperience(experience);
-  //   }
-
-  //   fetchOne();
-  // }, []);
 
   function addExperience(experience) {
     setExperiences([...experiences, experience]);
@@ -65,6 +65,14 @@ export default function App() {
       ) : (
         <AuthPage setUser={setUser} />
       )}
+      <div
+        className="app"
+        style={{
+          backgroundImage: img ? `url(${img.url})` : "none",
+          backgroundSize: "cover",
+          height: "100vh",
+        }}
+      ></div>
     </main>
   );
 }
