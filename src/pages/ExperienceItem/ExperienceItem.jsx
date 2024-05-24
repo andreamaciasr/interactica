@@ -8,7 +8,8 @@ export default function ExperienceItem({ experience, user }) {
     content: "",
   });
   const [comments, setComments] = useState(experience.comments);
-  const [showComments, setShowComments] = useState(true);
+  const [showComments, setShowComments] = useState(false);
+  const [showCommentForm, setShowCommentForm] = useState(false);
 
   function addComment(comment) {
     setComments([...comments, comment]);
@@ -58,8 +59,8 @@ export default function ExperienceItem({ experience, user }) {
               src="./closed-eye.png"
               alt="Hide"
               style={{
-                width: "23px",
-                height: "23px",
+                width: "28px",
+                height: "28px",
                 backgroundColor: "transparent",
               }}
             />
@@ -68,8 +69,8 @@ export default function ExperienceItem({ experience, user }) {
               src="./eye.png"
               alt="Show Comments"
               style={{
-                width: "23px",
-                height: "23px",
+                width: "28px",
+                height: "28px",
                 backgroundColor: "transparent",
               }}
             />
@@ -92,18 +93,49 @@ export default function ExperienceItem({ experience, user }) {
           <div></div>
         )}
       </div>
-
-      <form onSubmit={handleNewComment} className="comment-form">
-        <input
-          type="text"
-          name="content"
-          value={newComment.content}
-          onChange={handleChange}
-          className="comment-input"
-          placeholder="Add a comment..."
-        />
-        <button className="comment-submit">Submit</button>
-      </form>
+      <button
+        className="form-show"
+        onClick={() => setShowCommentForm(!showCommentForm)}
+      >
+        {showCommentForm ? (
+          <img
+            src="./comment.png"
+            style={{
+              width: "28px", // Adjust the width as needed
+              height: "28px", // Adjust the height as needed
+              position: "relative", // Set position to relative
+              left: "-20px", // Move the image to the left (adjust as needed)
+              backgroundColor: "transparent",
+            }}
+          />
+        ) : (
+          <img
+            src="./comment.png"
+            style={{
+              width: "28px", // Adjust the width as needed
+              height: "28px", // Adjust the height as needed
+              position: "relative", // Set position to relative
+              left: "-20px", // Move the image to the left (adjust as needed)
+              backgroundColor: "transparent",
+            }}
+          />
+        )}
+      </button>
+      {showCommentForm ? (
+        <form onSubmit={handleNewComment} className="comment-form">
+          <input
+            type="text"
+            name="content"
+            value={newComment.content}
+            onChange={handleChange}
+            className="comment-input"
+            placeholder="Add a comment..."
+          />
+          <button className="comment-submit">Submit</button>
+        </form>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

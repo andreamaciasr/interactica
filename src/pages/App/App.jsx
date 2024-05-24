@@ -40,41 +40,34 @@ export default function App() {
   }
 
   return (
-    
-      <main className="App">
-        {user ? (
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              <Route
-                path="/experiences/:experienceid"
-                element={<ExperienceDetail />}
-              />
-              <Route
-                path="/experiences/"
-                element={<Dashboard experiences={experiences} />}
-              />
-              <Route
-                path="/new"
-                element={
-                  <NewExperienceForm
-                    addExperience={addExperience}
-                    user={user}
-                  />
-                }
-              />
-            </Routes>
-          </>
-        ) : (
-            <div
-                className="NasaPic"
-                style={{
-                backgroundImage: img ? `url(${img.url})` : "none",
-                }}
-            >   
-                <AuthPage setUser={setUser} />
-            </div>
-        )}
-      </main>
+    <main className="App">
+      {user ? (
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <Routes>
+            <Route
+              path="/experiences/:experienceid"
+              element={<ExperienceDetail />}
+            />
+            <Route path="/" element={<Dashboard experiences={experiences} />} />
+            <Route
+              path="/new"
+              element={
+                <NewExperienceForm addExperience={addExperience} user={user} />
+              }
+            />
+          </Routes>
+        </>
+      ) : (
+        <div
+          className="NasaPic"
+          style={{
+            backgroundImage: img ? `url(${img.url})` : "none",
+          }}
+        >
+          <AuthPage setUser={setUser} />
+        </div>
+      )}
+    </main>
   );
 }

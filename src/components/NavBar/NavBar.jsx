@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <div className="NavContainer">
       <nav>
-        <Link to="/experiences">Dashboard</Link>
+        <Link to="/">Dashboard</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Link to="/new">Create New Entry</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
