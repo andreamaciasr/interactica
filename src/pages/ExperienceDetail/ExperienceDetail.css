@@ -1,0 +1,11 @@
+.experience-item {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.experience-username {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  text-align: left;
+}
