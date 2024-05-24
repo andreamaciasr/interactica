@@ -1,9 +1,15 @@
-.experience-item {
+/* .experience-item {
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 20px;
-}
+} */
 
+.experience-username {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  text-align: left;
+}
 .experience-link {
   text-decoration: none;
   color: #333;
@@ -13,6 +19,7 @@
   margin: 0;
   font-size: 3.4vmin;
   color: rgb(227, 88, 7);
+  text-align: left;
 }
 
 .experience-description {
@@ -23,6 +30,7 @@
 
 .comments-section {
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .comment {

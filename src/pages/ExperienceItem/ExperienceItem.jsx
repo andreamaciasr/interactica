@@ -40,12 +40,12 @@ export default function ExperienceItem({ experience, user }) {
 
   return (
     <div className="experience-item">
+      <p className="experience-username">
+        Created By: {experience.user && experience.user.name}
+      </p>
       <Link to={`/experiences/${experience._id}`} className="experience-link">
         <h1 className="experience-title">{experience.title}</h1>
-        <p className="experience-description">
-          {experience.description}
-          {experience.user && experience.user.name}
-        </p>
+        <p className="experience-description">{experience.description}</p>
       </Link>
 
       <div className="comments-section">
@@ -53,7 +53,27 @@ export default function ExperienceItem({ experience, user }) {
           className="comment-show"
           onClick={() => setShowComments(!showComments)}
         >
-          {showComments ? "Hide" : "Show Comments"}
+          {showComments ? (
+            <img
+              src="./closed-eye.png"
+              alt="Hide"
+              style={{
+                width: "23px",
+                height: "23px",
+                backgroundColor: "transparent",
+              }}
+            />
+          ) : (
+            <img
+              src="./eye.png"
+              alt="Show Comments"
+              style={{
+                width: "23px",
+                height: "23px",
+                backgroundColor: "transparent",
+              }}
+            />
+          )}
         </button>
         {experience.comments &&
         experience.comments.length > 0 &&
