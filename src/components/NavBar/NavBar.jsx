@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       <nav>
         <Link to="/experiences">Dashboard</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/new">Create new experience</Link>
+        <Link to="/new">Create New Entry</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <span>Welcome, {user.name}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;

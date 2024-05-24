@@ -80,9 +80,12 @@ export default function ExperienceItem({ experience, user }) {
         showComments ? (
           <div>
             {experience.comments.map((c) => (
-              <p key={c._id} className="comment">
-                {c.content} - {c.user.name}
-              </p>
+              <>
+                <p className="comment-username">{c.user.name} says:</p>
+                <p key={c._id} className="comment">
+                  {c.content}
+                </p>
+              </>
             ))}
           </div>
         ) : (

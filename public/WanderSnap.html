@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:3000/experiences -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>WanderSnap</title>
+  <script defer="" src="./WanderSnap_files/bundle.js"></script><style>@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);</style><style>/* CSS Custom Properties */
+:root {
+  --white: #ffffff;
+  --tan-1: #fbf9f6;
+  --tan-2: #e7e2dd;
+  --tan-3: #e2d9d1;
+  --tan-4: #5885af;
+  --orange: #5885af;
+  --text-light: #968c84;
+  --text-dark: #615954;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0vmin;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--tan-4);
+  padding: 0vmin;
+  height: 100vh;
+}
+
+code {
+  font-family: "Roboto", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.align-ctr {
+  text-align: center;
+}
+
+.align-rt {
+  text-align: right;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.flex-ctr-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-j-end {
+  justify-content: flex-end;
+}
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--tan-1);
+  color: var(--text-dark);
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  padding: 0.6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+
+.form-container {
+  padding: 3vmin;
+  margin: 8vmin;
+  background-color: var(--tan-1);
+  border: none;
+  border-radius: 1vmin;
+  opacity: 0.8;
+}
+
+p.error-message {
+  color: var(--orange);
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.25vmin;
+  color: var(--text-light);
+}
+
+label {
+  font-size: 2vmin;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: 1vmin;
+  font-size: 2vmin;
+  border: none;
+  color: var(--text-dark);
+  background-image: none !important; /* prevent lastpass */
+  outline: none;
+  background: none;
+  border-bottom: 1px solid #5885af;
+}
+
+input:focus {
+  border-color: var(--orange);
+}
+
+button,
+a.button {
+  margin: 1vmin;
+  padding: 1vmin;
+  color: var(--white);
+  background-color: var(--orange);
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid var(--tan-2);
+  border-radius: 0.5vmin;
+  outline: none;
+  cursor: pointer;
+}
+
+button.btn-sm {
+  font-size: 1.5vmin;
+  padding: 0.6vmin 0.8vmin;
+}
+
+button.btn-xs {
+  font-size: 1vmin;
+  padding: 0.4vmin 0.5vmin;
+}
+
+button:disabled,
+form:invalid button[type="submit"] {
+  cursor: not-allowed;
+  background-color: var(--tan-4);
+}
+
+button[type="submit"] {
+  grid-column: span 1;
+  margin: 1vmin 0 0;
+  align-items: right;
+  display: block;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMEJBQTBCO0FBRzFCO0VBQ0UsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLG9CQUFvQjtBQUN0Qjs7QUFFQTs7O0VBR0Usc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLHFCQUFxQjtFQUNyQixtQ0FBbUM7RUFDbkMsa0NBQWtDO0VBQ2xDLDhCQUE4QjtFQUM5QixjQUFjO0VBQ2QsYUFBYTtBQUNmOztBQUVBO0VBQ0U7YUFDVztBQUNiOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsNkJBQTZCO0VBQzdCLG1CQUFtQjtFQUNuQiw4QkFBOEI7RUFDOUIsdUJBQXVCO0VBQ3ZCLGtDQUFrQztFQUNsQyxvQkFBb0I7RUFDcEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsYUFBYTtFQUNiLDhCQUE4QjtFQUM5QixZQUFZO0VBQ1osb0JBQW9CO0VBQ3BCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLG9CQUFvQjtFQUNwQixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLGFBQWE7RUFDYix3QkFBd0I7QUFDMUI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixpQ0FBaUMsRUFBRSxxQkFBcUI7RUFDeEQsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSwyQkFBMkI7QUFDN0I7O0FBRUE7O0VBRUUsYUFBYTtFQUNiLGNBQWM7RUFDZCxtQkFBbUI7RUFDbkIsK0JBQStCO0VBQy9CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLGtCQUFrQjtFQUNsQixrQ0FBa0M7RUFDbEMsc0JBQXNCO0VBQ3RCLGFBQWE7RUFDYixlQUFlO0FBQ2pCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQix3QkFBd0I7QUFDMUI7O0FBRUE7O0VBRUUsbUJBQW1CO0VBQ25CLDhCQUE4QjtBQUNoQzs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGNBQWM7QUFDaEIiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBDU1MgQ3VzdG9tIFByb3BlcnRpZXMgKi9cblxuQGltcG9ydCB1cmwoXCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVJvYm90bzppdGFsLHdnaHRAMCwxMDA7MCwzMDA7MCw0MDA7MCw1MDA7MCw3MDA7MCw5MDA7MSwxMDA7MSwzMDA7MSw0MDA7MSw1MDA7MSw3MDA7MSw5MDAmZGlzcGxheT1zd2FwXCIpO1xuOnJvb3Qge1xuICAtLXdoaXRlOiAjZmZmZmZmO1xuICAtLXRhbi0xOiAjZmJmOWY2O1xuICAtLXRhbi0yOiAjZTdlMmRkO1xuICAtLXRhbi0zOiAjZTJkOWQxO1xuICAtLXRhbi00OiAjNTg4NWFmO1xuICAtLW9yYW5nZTogIzU4ODVhZjtcbiAgLS10ZXh0LWxpZ2h0OiAjOTY4Yzg0O1xuICAtLXRleHQtZGFyazogIzYxNTk1NDtcbn1cblxuKixcbio6YmVmb3JlLFxuKjphZnRlciB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbmJvZHkge1xuICBtYXJnaW46IDB2bWluO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIjtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRhbi00KTtcbiAgcGFkZGluZzogMHZtaW47XG4gIGhlaWdodDogMTAwdmg7XG59XG5cbmNvZGUge1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIiwgc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgXCJDb3VyaWVyIE5ld1wiLFxuICAgIG1vbm9zcGFjZTtcbn1cblxuI3Jvb3Qge1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5hbGlnbi1jdHIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5hbGlnbi1ydCB7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xufVxuXG4uc21hbGxlciB7XG4gIGZvbnQtc2l6ZTogc21hbGxlcjtcbn1cblxuLmZsZXgtY3RyLWN0ciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4uZmxleC1jb2wge1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG4uZmxleC1qLWVuZCB7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG59XG5cbi5zY3JvbGwteSB7XG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cblxuLnNlY3Rpb24taGVhZGluZyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS10YW4tMSk7XG4gIGNvbG9yOiB2YXIoLS10ZXh0LWRhcmspO1xuICBib3JkZXI6IDAuMXZtaW4gc29saWQgdmFyKC0tdGFuLTMpO1xuICBib3JkZXItcmFkaXVzOiAxdm1pbjtcbiAgcGFkZGluZzogMC42dm1pbjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXNpemU6IDJ2bWluO1xufVxuXG4uZm9ybS1jb250YWluZXIge1xuICBwYWRkaW5nOiAzdm1pbjtcbiAgbWFyZ2luOiA4dm1pbjtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tdGFuLTEpO1xuICBib3JkZXI6IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDF2bWluO1xuICBvcGFjaXR5OiAwLjg7XG59XG5cbnAuZXJyb3ItbWVzc2FnZSB7XG4gIGNvbG9yOiB2YXIoLS1vcmFuZ2UpO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbmZvcm0ge1xuICBkaXNwbGF5OiBncmlkO1xuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAzZnI7XG4gIGdhcDogMS4yNXZtaW47XG4gIGNvbG9yOiB2YXIoLS10ZXh0LWxpZ2h0KTtcbn1cblxubGFiZWwge1xuICBmb250LXNpemU6IDJ2bWluO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG5pbnB1dCB7XG4gIHBhZGRpbmc6IDF2bWluO1xuICBmb250LXNpemU6IDJ2bWluO1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiB2YXIoLS10ZXh0LWRhcmspO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBub25lICFpbXBvcnRhbnQ7IC8qIHByZXZlbnQgbGFzdHBhc3MgKi9cbiAgb3V0bGluZTogbm9uZTtcbiAgYmFja2dyb3VuZDogbm9uZTtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICM1ODg1YWY7XG59XG5cbmlucHV0OmZvY3VzIHtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1vcmFuZ2UpO1xufVxuXG5idXR0b24sXG5hLmJ1dHRvbiB7XG4gIG1hcmdpbjogMXZtaW47XG4gIHBhZGRpbmc6IDF2bWluO1xuICBjb2xvcjogdmFyKC0td2hpdGUpO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1vcmFuZ2UpO1xuICBmb250LXNpemU6IDJ2bWluO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlcjogMC4xdm1pbiBzb2xpZCB2YXIoLS10YW4tMik7XG4gIGJvcmRlci1yYWRpdXM6IDAuNXZtaW47XG4gIG91dGxpbmU6IG5vbmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuYnV0dG9uLmJ0bi1zbSB7XG4gIGZvbnQtc2l6ZTogMS41dm1pbjtcbiAgcGFkZGluZzogMC42dm1pbiAwLjh2bWluO1xufVxuXG5idXR0b24uYnRuLXhzIHtcbiAgZm9udC1zaXplOiAxdm1pbjtcbiAgcGFkZGluZzogMC40dm1pbiAwLjV2bWluO1xufVxuXG5idXR0b246ZGlzYWJsZWQsXG5mb3JtOmludmFsaWQgYnV0dG9uW3R5cGU9XCJzdWJtaXRcIl0ge1xuICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS10YW4tNCk7XG59XG5cbmJ1dHRvblt0eXBlPVwic3VibWl0XCJdIHtcbiAgZ3JpZC1jb2x1bW46IHNwYW4gMTtcbiAgbWFyZ2luOiAxdm1pbiAwIDA7XG4gIGFsaWduLWl0ZW1zOiByaWdodDtcbiAgZGlzcGxheTogYmxvY2s7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>/* .experience-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+} */
+
+.experience-username {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  text-align: left;
+}
+.experience-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.experience-title {
+  margin: 0;
+  font-size: 3.4vmin;
+  color: rgb(227, 88, 7);
+  text-align: left;
+}
+
+.experience-description {
+  margin-bottom: 10px;
+  text-align: center;
+  text-align: left;
+}
+
+.comments-section {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.comment {
+  margin: 10px 0;
+  margin-left: 30px;
+}
+
+.comment-form {
+  display: flex;
+  align-items: center;
+}
+
+.comment-input {
+  flex: 1 1;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.comment-submit {
+  padding: 5px 10px;
+  background-color: #082543;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-show {
+  padding: 2px 5px;
+  font-size: 1.4vmin;
+  background-color: #d8dfe7;
+  color: #8a8585;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-submit:hover {
+  background-color: #09233e;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9FeHBlcmllbmNlSXRlbS9FeHBlcmllbmNlSXRlbS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7R0FJRzs7QUFFSDtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsU0FBUztFQUNULGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UscUJBQXFCO0VBQ3JCLFdBQVc7QUFDYjs7QUFFQTtFQUNFLFNBQVM7RUFDVCxrQkFBa0I7RUFDbEIsc0JBQXNCO0VBQ3RCLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsU0FBTztFQUNQLGtCQUFrQjtFQUNsQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIseUJBQXlCO0VBQ3pCLFdBQVc7RUFDWCxZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGNBQWM7RUFDZCxZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHlCQUF5QjtBQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIi8qIC5leHBlcmllbmNlLWl0ZW0ge1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICBwYWRkaW5nOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufSAqL1xuXG4uZXhwZXJpZW5jZS11c2VybmFtZSB7XG4gIGNvbG9yOiAjNjY2O1xuICBmb250LXN0eWxlOiBpdGFsaWM7XG4gIG1hcmdpbjogMDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbn1cbi5leHBlcmllbmNlLWxpbmsge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGNvbG9yOiAjMzMzO1xufVxuXG4uZXhwZXJpZW5jZS10aXRsZSB7XG4gIG1hcmdpbjogMDtcbiAgZm9udC1zaXplOiAzLjR2bWluO1xuICBjb2xvcjogcmdiKDIyNywgODgsIDcpO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xufVxuXG4uZXhwZXJpZW5jZS1kZXNjcmlwdGlvbiB7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbn1cblxuLmNvbW1lbnRzLXNlY3Rpb24ge1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xufVxuXG4uY29tbWVudCB7XG4gIG1hcmdpbjogMTBweCAwO1xuICBtYXJnaW4tbGVmdDogMzBweDtcbn1cblxuLmNvbW1lbnQtZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbi5jb21tZW50LWlucHV0IHtcbiAgZmxleDogMTtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICBwYWRkaW5nOiA1cHg7XG59XG5cbi5jb21tZW50LXN1Ym1pdCB7XG4gIHBhZGRpbmc6IDVweCAxMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDgyNTQzO1xuICBjb2xvcjogI2ZmZjtcbiAgYm9yZGVyOiBub25lO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5jb21tZW50LXNob3cge1xuICBwYWRkaW5nOiAycHggNXB4O1xuICBmb250LXNpemU6IDEuNHZtaW47XG4gIGJhY2tncm91bmQtY29sb3I6ICNkOGRmZTc7XG4gIGNvbG9yOiAjOGE4NTg1O1xuICBib3JkZXI6IG5vbmU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmNvbW1lbnQtc3VibWl0OmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzA5MjMzZTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);</style><style>.App {
+  text-align: center;
+  font-family: "Roboto";
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+.NasaPic {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #6efb61;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.exp-title {
+  font-size: larger;
+  font-weight: bold;
+  color: #d0460b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wYWdlcy9BcHAvQXBwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsVUFBVTtFQUNWLFNBQVM7QUFDWDs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QiwyQkFBMkI7RUFDM0IsYUFBYTtFQUNiLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7QUFDdEI7O0FBRUE7RUFDRTtJQUNFLDRDQUE0QztFQUM5QztBQUNGOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsNkJBQTZCO0VBQzdCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtFQUN6QjtFQUNBO0lBQ0UseUJBQXlCO0VBQzNCO0FBQ0Y7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsbUJBQW1CO0FBQ3JCIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoXCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVJvYm90bzppdGFsLHdnaHRAMCwxMDA7MCwzMDA7MCw0MDA7MCw1MDA7MCw3MDA7MCw5MDA7MSwxMDA7MSwzMDA7MSw0MDA7MSw1MDA7MSw3MDA7MSw5MDAmZGlzcGxheT1zd2FwXCIpO1xuXG4uQXBwIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LWZhbWlseTogXCJSb2JvdG9cIjtcbiAgcGFkZGluZzogMDtcbiAgbWFyZ2luOiAwO1xufVxuXG5ib2R5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn1cblxuLk5hc2FQaWMge1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIGhlaWdodDogMTAwdmg7XG4gIGhlaWdodDogMTAwdmg7XG59XG5cbi5BcHAtbG9nbyB7XG4gIGhlaWdodDogNDB2bWluO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cblxuQG1lZGlhIChwcmVmZXJzLXJlZHVjZWQtbW90aW9uOiBuby1wcmVmZXJlbmNlKSB7XG4gIC5BcHAtbG9nbyB7XG4gICAgYW5pbWF0aW9uOiBBcHAtbG9nby1zcGluIGluZmluaXRlIDIwcyBsaW5lYXI7XG4gIH1cbn1cblxuLkFwcC1oZWFkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyYzM0O1xuICBtaW4taGVpZ2h0OiAxMDB2aDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogY2FsYygxMHB4ICsgMnZtaW4pO1xuICBjb2xvcjogd2hpdGU7XG59XG5cbi5BcHAtbGluayB7XG4gIGNvbG9yOiAjNmVmYjYxO1xufVxuXG5Aa2V5ZnJhbWVzIEFwcC1sb2dvLXNwaW4ge1xuICBmcm9tIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxuICB0byB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTtcbiAgfVxufVxuXG4uZXhwLXRpdGxlIHtcbiAgZm9udC1zaXplOiBsYXJnZXI7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBjb2xvcjogI2QwNDYwYjtcbiAgbWFyZ2luLXRvcDogMjBweDtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.NavContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 0vmin;
+  padding: 8vmin;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9jb21wb25lbnRzL05hdkJhci9OYXZCYXIuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUNiLDZCQUE2QjtFQUM3QixhQUFhO0VBQ2IsY0FBYztBQUNoQiIsInNvdXJjZXNDb250ZW50IjpbIi5OYXZDb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgbWFyZ2luOiAwdm1pbjtcbiAgcGFkZGluZzogOHZtaW47XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><main class="App"><div class="NavContainer"><nav><a href="http://localhost:3000/experiences">Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost:3000/new">Create New Entry</a>&nbsp;&nbsp;&nbsp;&nbsp;<span>Welcome, Mariana</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost:3000/">Log Out</a></nav></div><ul class="Dashboard"><div class="experience-item"><p class="experience-username">Created By: andrea</p><a class="experience-link" href="http://localhost:3000/experiences/665027b2a188895fd5e539c4"><h1 class="experience-title">Exploring Quantum Computing: The Future of Information Processing</h1><p class="experience-description">I've been diving into the world of quantum computing lately, and I'm absolutely fascinated by its potential. Quantum computers promise to revolutionize information processing, solving complex problems at speeds unimaginable with classical computers. I'd love to discuss this groundbreaking technology with fellow enthusiasts and experts!  From qubits and superposition to quantum algorithms and potential applications in cryptography, there's so much to explore. Have you delved into quantum computing? What resources, books, or online courses would you recommend for someone looking to learn more about it?  Let's unravel the mysteries of quantum computing together! Share your thoughts, insights, and favorite resources in the comments below. 🚀🔬</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div><p class="experience-username">andrea says:</p><p class="comment">Hey there!  I'm so glad you brought up quantum computing! It's such an exciting field with seemingly limitless possibilities. I've been studying it for a while now, and I'm continually amazed by how it challenges our conventional understanding of computing.  If you're looking for resources to dive deeper into quantum computing, I highly recommend checking out "Quantum Computing Since Democritus" by Scott Aaronson. It's a fantastic read that provides both a comprehensive overview and some thought-provoking insights into the philosophical implications of quantum computing.  I'm also curious to hear from others about their favorite resources or any recent breakthroughs in the field. Let's keep the conversation going and explore the quantum frontier together! 🌌💻</p><p class="experience-username">andrea says:</p><p class="comment">I second that!</p><p class="experience-username">andrea says:</p><p class="comment">hello!</p><p class="experience-username">andrea says:</p><p class="comment">hi!</p><p class="experience-username">andrea says:</p><p class="comment">Agree!</p><p class="experience-username">andrea says:</p><p class="comment">yes!</p><p class="experience-username">andrea says:</p><p class="comment">I like this post</p><p class="experience-username">andrea says:</p><p class="comment">i like it</p><p class="experience-username">andrea says:</p><p class="comment">test</p><p class="experience-username">andrea says:</p><p class="comment">test</p><p class="experience-username">Mariana says:</p><p class="comment">hola</p></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div><div class="experience-item"><p class="experience-username">Created By: Mariana</p><a class="experience-link" href="http://localhost:3000/experiences/6650327b7074554b28069664"><h1 class="experience-title">a</h1><p class="experience-description">a</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div><div class="experience-item"><p class="experience-username">Created By: Mariana</p><a class="experience-link" href="http://localhost:3000/experiences/665032917074554b28069682"><h1 class="experience-title">b</h1><p class="experience-description">b</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div><div class="experience-item"><p class="experience-username">Created By: Mariana</p><a class="experience-link" href="http://localhost:3000/experiences/66503ad27074554b280696d8"><h1 class="experience-title">hola</h1><p class="experience-description">hola</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div><p class="experience-username">Mariana says:</p><p class="comment">hola</p></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div><div class="experience-item"><p class="experience-username">Created By: Mariana</p><a class="experience-link" href="http://localhost:3000/experiences/66503ae07074554b280696f6"><h1 class="experience-title">test</h1><p class="experience-description">test</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div><div class="experience-item"><p class="experience-username">Created By: Mariana</p><a class="experience-link" href="http://localhost:3000/experiences/66503b4a7074554b28069730"><h1 class="experience-title">a</h1><p class="experience-description">a</p></a><div class="comments-section"><button class="comment-show"><img src="./WanderSnap_files/closed-eye.png" alt="Hide" style="width: 23px; height: 23px; background-color: transparent;"></button><div></div></div><form class="comment-form"><input type="text" name="content" class="comment-input" placeholder="Add a comment..." value=""><button class="comment-submit">Submit</button></form></div></ul></main></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+</body></html>
