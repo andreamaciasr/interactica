@@ -14,7 +14,7 @@ This is a "Reddit" like MERN app, where users can post an idea or a question, an
 
 # Screenshots
 
-<img src="public/screenshot.png">
+<img src="public/Screenshot.png">
 <img src="public/screenshot1.png">
 
 # Getting started
