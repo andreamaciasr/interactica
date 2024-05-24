@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { createComment } from "../../utilities/experiences-api";
+import "./ExperienceItem.css";
 
 export default function ExperienceItem({ experience, user }) {
   const [newComment, setNewComment] = useState({
@@ -12,7 +13,6 @@ export default function ExperienceItem({ experience, user }) {
     setComments([...comments, comment]);
   }
 
-  //fetch("/experience._id/create_comment")
   async function handleNewComment(evt) {
     evt.preventDefault();
     try {
@@ -29,7 +29,7 @@ export default function ExperienceItem({ experience, user }) {
   }
 
   function handleChange(evt) {
-    const { name, value } = evt.target; // evt.target.name
+    const { name, value } = evt.target;
     setNewComment({
       ...newComment,
       [name]: value,
@@ -37,35 +37,38 @@ export default function ExperienceItem({ experience, user }) {
   }
 
   return (
-    <>
-      {" "}
-      <Link to={`/experiences/${experience._id}`}>
-        <h3>{experience.title}</h3>
+    <div className="experience-item">
+      <Link to={`/experiences/${experience._id}`} className="experience-link">
+        <h1 className="exp-title">{experience.title}</h1>
+        <p>{experience.description}</p>
       </Link>
-      <p>
-        {experience.description} {experience.user.name}
+      <p className="experience-description">
+        {experience.description} - {experience.user.name}
       </p>
-      {experience.comments.length > 0 ? (
-        experience.comments.map((c) => (
-          <p key={c._id}>
-            {c.content} {c.user.name}
-          </p>
-        ))
-      ) : (
-        <div></div>
-      )}
-      <div>
-        <form onSubmit={handleNewComment}>
-          <title>Add Comment</title>
-          <input
-            type="text"
-            name="content"
-            value={newComment.content}
-            onChange={handleChange}
-          />
-          <button>Submit</button>
-        </form>
+      <div className="comments-section">
+        {experience.comments.length > 0 ? (
+          <div>
+            {experience.comments.map((c) => (
+              <p key={c._id} className="comment">
+                {c.content} - {c.user.name}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <div>No comments yet</div>
+        )}
       </div>
-    </>
+      <form onSubmit={handleNewComment} className="comment-form">
+        <input
+          type="text"
+          name="content"
+          value={newComment.content}
+          onChange={handleChange}
+          className="comment-input"
+          placeholder="Add a comment..."
+        />
+        <button className="comment-submit">Submit</button>
+      </form>
+    </div>
   );
 }

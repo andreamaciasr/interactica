@@ -7,11 +7,15 @@
   margin: 0;
 }
 
+body {
+  background-color: #fff;
+}
+
 .NasaPic {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    height: 100vh;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  height: 100vh;
 }
 
 .App-logo {
@@ -49,9 +53,10 @@
   }
 }
 
-h1 {
- margin: 0vmin;
- padding: 10vmin;
- color:aliceblue;
- opacity: .87;
+.exp-title {
+  font-size: larger;
+  font-weight: bold;
+  color: #d0460b;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
