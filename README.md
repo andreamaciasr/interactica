@@ -1,3 +1,37 @@
-# MERN-Stack Infrastructure
+# INTERACTICA
+This is a "Reddit" like MERN app, where users can post an idea or a question, and other users can comment it. Users can come everyday to see a NASA image of the day in the login or sign up form, which is obtained via an API.
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+# Technologies used
+- React
+- JavaScript
+- Express
+- Mongoose
+- GitHub
+- Heroku
+- CSS
+
+# Screenshots
+
+- App
+![App](link)
+
+- Dashboard
+![Dashboard](link)
+
+- Create view
+![Create view](link)
+
+- Comments
+![Comments](link)
+
+- Detail
+![Detail](link)
+
+# Getting started
+- [Heroku](https://interactica-c5b46cef8de9.herokuapp.com/)
+- [GitHub](https://github.com/lucy-rz/project-4)
+- [Trello, ERD, Wireframe](https://trello.com/b/455SxS4C/the-dancing-penguins)
+
+# Future steps
+- Complete CRUD
+- 
