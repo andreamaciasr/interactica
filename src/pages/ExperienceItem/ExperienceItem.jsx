@@ -1,43 +1,26 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { createComment } from "../../utilities/experiences-api";
+import { useState, useEffect } from "react";
 import "./ExperienceItem.css";
+import NewCommentForm from "../../components/NewCommentForm/NewCommentForm";
+import { getComments } from "../../utilities/experiences-api";
 
 export default function ExperienceItem({ experience, user }) {
-  const [newComment, setNewComment] = useState({
-    content: "",
-  });
-  const [comments, setComments] = useState(experience.comments);
-  const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState(true);
   const [showCommentForm, setShowCommentForm] = useState(false);
 
   function addComment(comment) {
     setComments([...comments, comment]);
   }
 
-  async function handleNewComment(evt) {
-    evt.preventDefault();
-    try {
-      const commentData = {
-        content: newComment.content,
-        user: user,
-      };
-      const comment = await createComment(commentData, experience._id);
-      addComment(comment);
-      console.log(comment);
-      setNewComment({ content: "" });
-    } catch (error) {
-      console.error("Error creating comment:", error);
+  useEffect(() => {
+    async function fetchComments() {
+      const commentList = await getComments(experience._id);
+      setComments(commentList);
     }
-  }
 
-  function handleChange(evt) {
-    const { name, value } = evt.target;
-    setNewComment({
-      ...newComment,
-      [name]: value,
-    });
-  }
+    fetchComments();
+  }, []);
 
   return (
     <div className="experience-item">
@@ -80,13 +63,13 @@ export default function ExperienceItem({ experience, user }) {
         experience.comments.length > 0 &&
         showComments ? (
           <div>
-            {experience.comments.map((c) => (
-              <>
-                <p className="comment-username">{c.user.name} says:</p>
-                <p key={c._id} className="comment">
-                  {c.content}
+            {comments.map((c) => (
+              <div key={c._id}>
+                <p className="comment-username">
+                  {c.user ? c.user.name : ""} says:
                 </p>
-              </>
+                <p className="comment">{c.content}</p>
+              </div>
             ))}
           </div>
         ) : (
@@ -101,10 +84,10 @@ export default function ExperienceItem({ experience, user }) {
           <img
             src="./comment.png"
             style={{
-              width: "28px", // Adjust the width as needed
-              height: "28px", // Adjust the height as needed
-              position: "relative", // Set position to relative
-              left: "-20px", // Move the image to the left (adjust as needed)
+              width: "28px",
+              height: "28px",
+              position: "relative",
+              left: "-20px",
               backgroundColor: "transparent",
             }}
           />
@@ -112,27 +95,21 @@ export default function ExperienceItem({ experience, user }) {
           <img
             src="./comment.png"
             style={{
-              width: "28px", // Adjust the width as needed
-              height: "28px", // Adjust the height as needed
-              position: "relative", // Set position to relative
-              left: "-20px", // Move the image to the left (adjust as needed)
+              width: "28px",
+              height: "28px",
+              position: "relative",
+              left: "-20px",
               backgroundColor: "transparent",
             }}
           />
         )}
       </button>
       {showCommentForm ? (
-        <form onSubmit={handleNewComment} className="comment-form">
-          <input
-            type="text"
-            name="content"
-            value={newComment.content}
-            onChange={handleChange}
-            className="comment-input"
-            placeholder="Add a comment..."
-          />
-          <button className="comment-submit">Submit</button>
-        </form>
+        <NewCommentForm
+          addComment={addComment}
+          user={user}
+          experience={experience}
+        />
       ) : (
         <div></div>
       )}

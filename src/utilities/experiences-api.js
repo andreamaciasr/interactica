@@ -28,3 +28,7 @@ export async function getImage() {
   // console.log(send);
   return sendRequest(`${BASE_URL}/get-nasa-image`, "GET");
 }
+
+export async function getComments(experience_id) {
+  return sendRequest(`${BASE_URL}/${experience_id}/get-comments`, "GET");
+}

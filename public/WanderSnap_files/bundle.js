@@ -1144,7 +1144,6 @@ function ExperienceItem(_ref) {
       };
       const comment = await (0,_utilities_experiences_api__WEBPACK_IMPORTED_MODULE_1__.createComment)(commentData, experience._id);
       addComment(comment);
-      console.log(comment);
       setNewComment({
         content: ""
       });
@@ -1544,8 +1543,6 @@ async function getOne(id) {
   return (0,_send_request__WEBPACK_IMPORTED_MODULE_0__["default"])(`${BASE_URL}/${id}`, "GET");
 }
 async function getImage() {
-  // let send = sendRequest(`${BASE_URL}/get-nasa-image`, "GET");
-  // console.log(send);
   return (0,_send_request__WEBPACK_IMPORTED_MODULE_0__["default"])(`${BASE_URL}/get-nasa-image`, "GET");
 }
 

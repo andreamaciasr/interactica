@@ -28,7 +28,7 @@ export default function NewExperienceForm({ addExperience, user }) {
         createdAt,
       });
       setNewExperience({ title: "", description: "", img: "" });
-      navigate("/experiences");
+      navigate("/");
     } catch (error) {
       console.log("error!!!");
     }
