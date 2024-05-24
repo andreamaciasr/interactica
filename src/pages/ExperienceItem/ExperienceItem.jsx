@@ -6,7 +6,7 @@ export default function ExperienceItem({ experience, user }) {
   const [newComment, setNewComment] = useState({
     content: "",
   });
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(experience.comments);
 
   function addComment(comment) {
     setComments([...comments, comment]);
@@ -22,7 +22,10 @@ export default function ExperienceItem({ experience, user }) {
       };
       const comment = await createComment(commentData, experience._id);
       addComment(comment);
-    } catch (error) {}
+      setNewComment({ content: "" });
+    } catch (error) {
+      console.error("Error creating comment:", error);
+    }
   }
 
   function handleChange(evt) {
@@ -44,7 +47,7 @@ export default function ExperienceItem({ experience, user }) {
       </p>
       {experience.comments.length > 0 ? (
         experience.comments.map((c) => (
-          <p>
+          <p key={c._id}>
             {c.content} {c.user.name}
           </p>
         ))
