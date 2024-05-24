@@ -1,13 +1,20 @@
-/* .experience-item {
-  border: 1px solid #ccc;
+.experience-item {
   padding: 10px;
   margin-bottom: 20px;
-} */
+  border-bottom: 1px solid #ccc; /* Add a bottom border */
+}
 
 .experience-username {
   color: #666;
   font-style: italic;
   margin: 0;
+  text-align: left;
+}
+.comment-username {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  margin-left: 20px;
   text-align: left;
 }
 .experience-link {
@@ -34,7 +41,8 @@
 }
 
 .comment {
-  margin: 5px 0;
+  margin: 10px 0;
+  margin-left: 30px;
 }
 
 .comment-form {
