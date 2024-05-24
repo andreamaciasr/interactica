@@ -3,10 +3,14 @@
 .App {
   text-align: center;
   font-family: "Roboto";
+  padding: 0;
+  margin: 0;
 }
 
 .NasaPic {
     background-size: cover;
+    background-position: center;
+    height: 100vh;
     height: 100vh;
 }
 
@@ -43,4 +47,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+ margin: 0vmin;
+ padding: 10vmin;
+ color:aliceblue;
+ opacity: .87;
 }
