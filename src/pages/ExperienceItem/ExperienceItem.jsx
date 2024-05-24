@@ -8,6 +8,7 @@ export default function ExperienceItem({ experience, user }) {
     content: "",
   });
   const [comments, setComments] = useState(experience.comments);
+  const [showComments, setShowComments] = useState(true);
 
   function addComment(comment) {
     setComments([...comments, comment]);
@@ -22,6 +23,7 @@ export default function ExperienceItem({ experience, user }) {
       };
       const comment = await createComment(commentData, experience._id);
       addComment(comment);
+      console.log(comment);
       setNewComment({ content: "" });
     } catch (error) {
       console.error("Error creating comment:", error);
@@ -39,14 +41,23 @@ export default function ExperienceItem({ experience, user }) {
   return (
     <div className="experience-item">
       <Link to={`/experiences/${experience._id}`} className="experience-link">
-        <h1 className="exp-title">{experience.title}</h1>
-        <p>{experience.description}</p>
+        <h1 className="experience-title">{experience.title}</h1>
+        <p className="experience-description">
+          {experience.description}
+          {experience.user && experience.user.name}
+        </p>
       </Link>
-      <p className="experience-description">
-        {experience.description} - {experience.user.name}
-      </p>
+
       <div className="comments-section">
-        {experience.comments.length > 0 ? (
+        <button
+          className="comment-show"
+          onClick={() => setShowComments(!showComments)}
+        >
+          {showComments ? "Hide" : "Show Comments"}
+        </button>
+        {experience.comments &&
+        experience.comments.length > 0 &&
+        showComments ? (
           <div>
             {experience.comments.map((c) => (
               <p key={c._id} className="comment">
@@ -55,9 +66,10 @@ export default function ExperienceItem({ experience, user }) {
             ))}
           </div>
         ) : (
-          <div>No comments yet</div>
+          <div></div>
         )}
       </div>
+
       <form onSubmit={handleNewComment} className="comment-form">
         <input
           type="text"
