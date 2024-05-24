@@ -11,10 +11,14 @@
 
 .experience-title {
   margin: 0;
+  font-size: 3.4vmin;
+  color: rgb(227, 88, 7);
 }
 
 .experience-description {
   margin-bottom: 10px;
+  text-align: center;
+  text-align: left;
 }
 
 .comments-section {
@@ -40,6 +44,15 @@
   padding: 5px 10px;
   background-color: #082543;
   color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-show {
+  padding: 2px 5px;
+  font-size: 1.4vmin;
+  background-color: #d8dfe7;
+  color: #8a8585;
   border: none;
   cursor: pointer;
 }

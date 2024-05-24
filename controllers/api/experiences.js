@@ -23,7 +23,7 @@ async function create(req, res) {
 async function createComment(req, res) {
   try {
     const experience = await Experience.findById(req.params.experienceId);
-    req.body.user = experience.user;
+    req.body.user = req.user;
     experience.comments.push(req.body);
     experience.save();
     res.json(experience.comments);
