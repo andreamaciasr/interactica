@@ -8,6 +8,7 @@ import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
 // import { getExperiences } from "../../utilities/experiences-api";
 import { getImage, getOne } from "../../utilities/experiences-api";
 import "./App.css";
+import CommentForm from "../CommentForm/CommentForm";
 
 import NavBar from "../../components/NavBar/NavBar";
 import { getExperiences } from "../../utilities/experiences-api";
@@ -19,7 +20,6 @@ export default function App() {
 
   useEffect(() => {
     async function getBackgroundImage() {
-      console.log("running");
       const img = await getImage();
       setImg(img);
     }
@@ -41,36 +41,39 @@ export default function App() {
 
   return (
     <div
-    className="NasaPic"
-    style={{
-      backgroundImage: img ? `url(${img.url})` : "none",
-    }}
-  >
-    <main className="App">
-      {user ? (
-        <>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route
-              path="/experiences/:experienceid"
-              element={<ExperienceDetail />}
-            />
-            <Route
-              path="/experiences/"
-              element={<Dashboard experiences={experiences} />}
-            />
-            <Route
-              path="/new"
-              element={
-                <NewExperienceForm addExperience={addExperience} user={user} />
-              }
-            />
-          </Routes>
-        </>
-      ) : (
-        <AuthPage setUser={setUser} />
-      )}
-    </main>
-     </div>
+      className="NasaPic"
+      style={{
+        backgroundImage: img ? `url(${img.url})` : "none",
+      }}
+    >
+      <main className="App">
+        {user ? (
+          <>
+            <NavBar user={user} setUser={setUser} />
+            <Routes>
+              <Route
+                path="/experiences/:experienceid"
+                element={<ExperienceDetail />}
+              />
+              <Route
+                path="/experiences/"
+                element={<Dashboard experiences={experiences} />}
+              />
+              <Route
+                path="/new"
+                element={
+                  <NewExperienceForm
+                    addExperience={addExperience}
+                    user={user}
+                  />
+                }
+              />
+            </Routes>
+          </>
+        ) : (
+          <AuthPage setUser={setUser} />
+        )}
+      </main>
+    </div>
   );
 }

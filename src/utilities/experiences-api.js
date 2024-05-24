@@ -7,6 +7,14 @@ export async function saveExperience(experienceData) {
   return sendRequest(BASE_URL, "POST", experienceData);
 }
 
+export async function createComment(commentData, experience_id) {
+  return sendRequest(
+    `${BASE_URL}/${experience_id}/create_comment`,
+    "POST",
+    commentData
+  );
+}
+
 export async function getExperiences() {
   return sendRequest(BASE_URL, "GET");
 }

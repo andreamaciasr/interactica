@@ -11,4 +11,6 @@ router.get("/get-nasa-image", experiencesCtrl.fetchNasa);
 
 router.get("/:experienceid", experiencesCtrl.getOne);
 
+router.post("/:experienceId/create_comment", experiencesCtrl.createComment);
+
 module.exports = router;
