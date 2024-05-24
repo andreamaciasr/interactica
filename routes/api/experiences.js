@@ -13,4 +13,6 @@ router.get("/:experienceid", experiencesCtrl.getOne);
 
 router.post("/:experienceId/create_comment", experiencesCtrl.createComment);
 
+router.get("/:experienceId/get-comments", experiencesCtrl.getAllComments);
+
 module.exports = router;

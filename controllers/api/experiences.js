@@ -9,6 +9,7 @@ module.exports = {
   getOne,
   fetchNasa,
   createComment,
+  getAllComments,
 };
 
 async function create(req, res) {
@@ -26,7 +27,7 @@ async function createComment(req, res) {
     req.body.user = req.user;
     experience.comments.push(req.body);
     experience.save();
-    res.json(experience.comments);
+    res.json(req.body);
   } catch (error) {
     console.log("Error saving comment ", error);
   }
@@ -61,5 +62,17 @@ async function fetchNasa(req, res) {
     res.json(data);
   } catch (error) {
     res.json(error);
+  }
+}
+
+async function getAllComments(req, res) {
+  try {
+    const experience = await Experience.findById(req.params.experienceId)
+      .populate("user")
+      .populate({ path: "comments.user" });
+    comments = experience.comments;
+    res.json(comments);
+  } catch (error) {
+    console.log("fallo tu route");
   }
 }
