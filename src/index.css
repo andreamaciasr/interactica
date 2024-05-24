@@ -80,9 +80,11 @@ code {
 
 .form-container {
   padding: 3vmin;
+  margin: 8vmin;
   background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  border: none;
   border-radius: 1vmin;
+  opacity: 0.8;
 }
 
 p.error-message {
@@ -106,11 +108,12 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
+  border: none;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
+  background: none;
+  border-bottom: 1px solid #5885AF;
 }
 
 input:focus {
@@ -148,6 +151,8 @@ button:disabled, form:invalid button[type="submit"] {
 }
 
 button[type="submit"] {
-  grid-column: span 2;
+  grid-column: span 1;
   margin: 1vmin 0 0;
+  align-items: right;
+  display: block;
 }
