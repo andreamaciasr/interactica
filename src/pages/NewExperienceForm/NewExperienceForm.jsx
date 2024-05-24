@@ -26,7 +26,7 @@ export default function NewExperienceForm({ addExperience, user }) {
         title: experience.title,
         description: experience.description,
         createdAt,
-      }); // fill
+      });
       setNewExperience({ title: "", description: "", img: "" });
       navigate("/experiences");
     } catch (error) {

@@ -1,6 +1,21 @@
 .NavContainer {
   display: flex;
-  justify-content: space-around;
-  margin: 0vmin;
-  padding: 8vmin;
+  align-items: center;
+  background-color: #cee3f8; /* Light blue background color */
+  height: 60px; /* Adjust height as needed */
+  padding: 0 20px; /* Add padding horizontally */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.NavContainer a {
+  color: #1a1a1b; /* Black color for links */
+  text-decoration: none; /* Remove default underline */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  margin: 0 15px; /* Add space between links */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.NavContainer a:hover {
+  color: #0079d3; /* Change color on hover */
 }

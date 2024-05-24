@@ -66,13 +66,21 @@
 
 .comment-show {
   padding: 2px 5px;
-  font-size: 1.4vmin;
+  font-size: 2vmin;
   background-color: #d8dfe7;
   color: #8a8585;
   border: none;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .comment-submit:hover {
   background-color: #09233e;
+}
+
+.form-show {
+  background-color: transparent;
+  border: none;
+  margin-left: 30px;
 }
