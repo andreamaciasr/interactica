@@ -5,10 +5,8 @@ import AuthPage from "../AuthPage/AuthPage";
 import Dashboard from "../Dashboard/Dashboard";
 import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
-// import { getExperiences } from "../../utilities/experiences-api";
 import { getImage, getOne } from "../../utilities/experiences-api";
 import "./App.css";
-import CommentForm from "../CommentForm/CommentForm";
 
 import NavBar from "../../components/NavBar/NavBar";
 import { getExperiences } from "../../utilities/experiences-api";

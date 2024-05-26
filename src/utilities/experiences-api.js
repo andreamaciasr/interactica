@@ -24,8 +24,6 @@ export async function getOne(id) {
 }
 
 export async function getImage() {
-  // let send = sendRequest(`${BASE_URL}/get-nasa-image`, "GET");
-  // console.log(send);
   return sendRequest(`${BASE_URL}/get-nasa-image`, "GET");
 }
 
