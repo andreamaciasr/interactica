@@ -30,3 +30,7 @@ export async function getImage() {
 export async function getComments(experience_id) {
   return sendRequest(`${BASE_URL}/${experience_id}/get-comments`, "GET");
 }
+
+export async function deleteComment(experience_id, comment_id) {
+  return sendRequest(`${BASE_URL}/${experience_id}/${comment_id}`, "DELETE");
+}

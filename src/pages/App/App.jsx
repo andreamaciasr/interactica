@@ -47,7 +47,10 @@ export default function App() {
               path="/experiences/:experienceid"
               element={<ExperienceDetail />}
             />
-            <Route path="/" element={<Dashboard experiences={experiences} />} />
+            <Route
+              path="/"
+              element={<Dashboard experiences={experiences} user={user} />}
+            />
             <Route
               path="/new"
               element={

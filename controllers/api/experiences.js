@@ -10,6 +10,7 @@ module.exports = {
   fetchNasa,
   createComment,
   getAllComments,
+  deleteComment,
 };
 
 async function create(req, res) {
@@ -30,6 +31,35 @@ async function createComment(req, res) {
     res.json(req.body);
   } catch (error) {
     console.log("Error saving comment ", error);
+  }
+}
+
+async function deleteComment(req, res) {
+  try {
+    console.log("working controller");
+    // const experience = await Experience.findOne({
+    //   "comments._id": req.params.commentId, // URL parameter
+    //   "comments.user": req.user_id, // Ensure req.user_id is set correctly
+    // });
+    const experience = await Experience.findById(req.params.experienceId);
+    if (!experience) {
+      return res
+        .status(404)
+        .send({ message: "Experience or comment not found" });
+    }
+
+    const comment = experience.comments.id(req.params.commentId);
+    if (!comment) {
+      return res.status(404).send({ message: "Comment not found" });
+    }
+
+    comment.remove();
+    await experience.save();
+
+    return res.status(200).send({ message: "Comment deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+    return res.status(500).send({ message: "Internal server error" });
   }
 }
 

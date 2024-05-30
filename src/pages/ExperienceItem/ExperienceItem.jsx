@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./ExperienceItem.css";
 import NewCommentForm from "../../components/NewCommentForm/NewCommentForm";
 import { getComments } from "../../utilities/experiences-api";
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 export default function ExperienceItem({ experience, user }) {
   const [comments, setComments] = useState([]);
@@ -69,6 +70,7 @@ export default function ExperienceItem({ experience, user }) {
                   {c.user ? c.user.name : ""} says:
                 </p>
                 <p className="comment">{c.content}</p>
+                <DeleteButton user={user} experience={experience} comment={c} />
               </div>
             ))}
           </div>

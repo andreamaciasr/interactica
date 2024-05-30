@@ -15,4 +15,10 @@ router.post("/:experienceId/create_comment", experiencesCtrl.createComment);
 
 router.get("/:experienceId/get-comments", experiencesCtrl.getAllComments);
 
+router.delete(
+  "/:experienceId/:commentId",
+  ensureLoggedIn,
+  experiencesCtrl.deleteComment
+);
+
 module.exports = router;
