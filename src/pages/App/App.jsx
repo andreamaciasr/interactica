@@ -7,6 +7,8 @@ import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
 import { getImage, getOne } from "../../utilities/experiences-api";
 import "./App.css";
+// import ensureLoggedIn from "../../../config/ensureLoggedIn";
+import { redirect } from "react-router-dom";
 
 import NavBar from "../../components/NavBar/NavBar";
 import { getExperiences } from "../../utilities/experiences-api";
@@ -51,6 +53,7 @@ export default function App() {
               path="/"
               element={<Dashboard experiences={experiences} user={user} />}
             />
+
             <Route
               path="/new"
               element={
