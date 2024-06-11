@@ -70,7 +70,7 @@ export default function ExperienceItem({ experience, user }) {
                   {c.user ? c.user.name : ""} says:
                 </p>
                 <p className="comment">{c.content}</p>
-                <DeleteButton user={user} experience={experience} comment={c} />
+                {/* <DeleteButton user={user} experience={experience} comment={c} /> */}
               </div>
             ))}
           </div>

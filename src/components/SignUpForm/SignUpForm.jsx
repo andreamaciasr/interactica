@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { signUp } from "../../utilities/users-service";
+import { useNavigate } from "react-router-dom";
 
 export default class SignUpForm extends Component {
   state = {
@@ -18,6 +19,7 @@ export default class SignUpForm extends Component {
   };
 
   handleSubmit = async (evt) => {
+    const navigate = useNavigate();
     evt.preventDefault();
     try {
       const { name, email, password } = this.state;
@@ -28,9 +30,11 @@ export default class SignUpForm extends Component {
       const user = await signUp(formData);
       this.props.setUser(user);
       this.props.history.push("/experiences");
-    } catch {
+      // navigate("/");
+    } catch (e) {
       // An error occurred
       // Probably due to a duplicate email
+      console.log("sigup error: ", e);
       this.setState({ error: "Sign Up Failed - Try Again" });
     }
   };
@@ -74,7 +78,7 @@ export default class SignUpForm extends Component {
               required
             />
             <button type="submit" disabled={disable}>
-              SIGN UP
+              Sign Up
             </button>
           </form>
         </div>

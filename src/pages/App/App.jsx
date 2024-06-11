@@ -7,7 +7,7 @@ import ExperienceDetail from "../ExperienceDetail/ExperienceDetail";
 import NewExperienceForm from "../NewExperienceForm/NewExperienceForm";
 import { getImage, getOne } from "../../utilities/experiences-api";
 import "./App.css";
-// import ensureLoggedIn from "../../../config/ensureLoggedIn";
+
 import { redirect } from "react-router-dom";
 
 import NavBar from "../../components/NavBar/NavBar";
@@ -16,15 +16,6 @@ import { getExperiences } from "../../utilities/experiences-api";
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [experiences, setExperiences] = useState([]);
-  const [img, setImg] = useState(null);
-
-  useEffect(() => {
-    async function getBackgroundImage() {
-      const img = await getImage();
-      setImg(img);
-    }
-    getBackgroundImage();
-  }, []);
 
   useEffect(() => {
     async function fetchExperiences() {
@@ -41,37 +32,27 @@ export default function App() {
 
   return (
     <main className="App">
-      {user ? (
-        <>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route
-              path="/experiences/:experienceid"
-              element={<ExperienceDetail />}
-            />
-            <Route
-              path="/"
-              element={<Dashboard experiences={experiences} user={user} />}
-            />
+      <>
+        <NavBar user={user} setUser={setUser} />
+        <Routes>
+          <Route
+            path="/experiences/:experienceid"
+            element={<ExperienceDetail />}
+          />
+          <Route
+            path="/"
+            element={<Dashboard experiences={experiences} user={user} />}
+          />
 
-            <Route
-              path="/new"
-              element={
-                <NewExperienceForm addExperience={addExperience} user={user} />
-              }
-            />
-          </Routes>
-        </>
-      ) : (
-        <div
-          className="NasaPic"
-          style={{
-            backgroundImage: img ? `url(${img.url})` : "none",
-          }}
-        >
-          <AuthPage setUser={setUser} />
-        </div>
-      )}
+          <Route
+            path="/new"
+            element={
+              <NewExperienceForm addExperience={addExperience} user={user} />
+            }
+          />
+          <Route path="/login" element={<AuthPage setUser={setUser} />} />
+        </Routes>
+      </>
     </main>
   );
 }
